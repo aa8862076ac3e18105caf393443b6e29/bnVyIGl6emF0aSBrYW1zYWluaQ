@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Semakan Kesahihan Sijil Lembaga Peperiksaan</title>
+    <style>
+        body {
+            background-color: #fdf6e3;
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 20px;
+        }
+        .header {
+            font-size: 18px;
+            font-weight: bold;
+            color: #17b188;
+            margin-bottom: 20px;
+            text-align: left;
+        }
+        .banner img {
+            width: 100%;
+            height: auto;
+        }
+        .container {
+            background-color: #f4e589;
+            padding: 20px;
+            margin: 20px 0;
+            border-radius: 10px;
+            display: inline-block;
+            width: 100%;
+            box-sizing: border-box;
+        }
+        .highlight {
+            color: #008cba; /* Biru laut */
+        }
+        .input-container {
+            text-align: left;
+            margin-top: 10px;
+        }
+        .input-label {
+            color: #008cba; /* Biru laut */
+            font-weight: bold;
+            display: block;
+            margin-bottom: 5px;
+        }
+		.input-field {
+			padding: 10px;
+			width: 100%;
+			font-size: 16px;
+			background-color: #f4e589; /* Warna latar asal */
+			border: none;
+			outline: none;
+			transition: border 0.3s ease-in-out; /* Bagi smooth */
+			border-bottom: 2px solid grey; /* Hanya ada garis bawah */
+		}
+
+		/* Bila klik, border jadi kotak hitam penuh */
+		.input-field:focus {
+			border: 2px solid black;
+			border-radius: 5px;
+		}
+
+        .error-msg {
+            color: red;
+            font-size: 18px;
+            margin-top: 5px;
+            display: none; /* Mula-mula tak nampak */
+        }
+        .login-btn {
+            background-color: #007bff;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            font-size: 16px;
+            cursor: pointer;
+            margin-top: 10px;
+            display: block;
+            text-align: left;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="header">Semakan Kesahihan Sijil Lembaga Peperiksaan</div>
+
+    <div class="banner">
+        <img src="si.jpg" alt="Akatsuki Banner">
+    </div>
+
+    <div class="container">
+        <p>Anda boleh capai maklumat sijil dengan memasukkan nombor angka giliran pada sijil ke medan <span class="highlight">Angka giliran</span> dan tekan butang <span class="highlight"> Semak</span>.</p>
+
+        <div class="input-container">
+            <label class="input-label">Angka Giliran</label>
+            <input type="text" id="password" class="input-field" placeholder="contoh angka giliran AB123A123">
+            <p id="error" class="error-msg">Sila pastikan angka giliran adalah dalam format AB123A123!</p>
+        </div>
+
+        <button class="login-btn" onclick="checkPassword()">Semak</button>
+    </div>
+
+    <script>
+        function checkPassword() {
+            var password = document.getElementById("password").value;
+            var errorMsg = document.getElementById("error");
+
+            if (password === "KE109E027") {
+                window.location.href = "SystemResult.html";
+            } else {
+                errorMsg.style.display = "block";
+            }
+        }
+    </script>
+
+</body>
+</html>
